@@ -9,26 +9,26 @@ for _ in range(n):
     root, left, right = input().rstrip().split()
     tree[root] = [left, right]
 
-def preOrder(root):
+def preOrderTraversal(root):
     if root != '.':
         print(root, end='') # root
-        preOrder(tree[root][0]) # l
-        preOrder(tree[root][1]) # r
+        preOrderTraversal(tree[root][0]) # l
+        preOrderTraversal(tree[root][1]) # r
 
-def inOrder(root):
+def inOrderTraversal(root):
     if root != '.':
-        inOrder(tree[root][0]) # l
+        inOrderTraversal(tree[root][0]) # l
         print(root, end='') # root
-        inOrder(tree[root][1]) # r
+        inOrderTraversal(tree[root][1]) # r
 
-def postOrder(root):
+def postOrderTraversal(root):
     if root != '.':
-        postOrder(tree[root][0]) # l
-        postOrder(tree[root][1]) # r
+        postOrderTraversal(tree[root][0]) # l
+        postOrderTraversal(tree[root][1]) # r
         print(root, end='') # root
 
-preOrder('A')
+preOrderTraversal('A')
 print()
-inOrder('A')
+inOrderTraversal('A')
 print()
-postOrder('A')
+postOrderTraversal('A')

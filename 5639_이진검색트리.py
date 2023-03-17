@@ -11,7 +11,7 @@ while True:
     except:
         break
 
-def postOrder(first, end):
+def postOrderTraversal(first, end):
     if first > end:
         return
     mid = end + 1 # 루트보다 큰 값이 존재하지 않을 경우를 대비
@@ -20,10 +20,10 @@ def postOrder(first, end):
             mid = i
             break
 
-    postOrder(first + 1, mid - 1)
-    postOrder(mid, end)
+    postOrderTraversal(first + 1, mid - 1)
+    postOrderTraversal(mid, end)
     print(num_list[first])
 
-postOrder(0, len(num_list) - 1)
+postOrderTraversal(0, len(num_list) - 1)
 
 
