@@ -4,11 +4,12 @@ from collections import deque
 input = sys.stdin.readline
 
 n = int(input().rstrip())
+m = int(input().rstrip())
 adj = [[] for _ in range(n + 1)]
 required = [[0] * (n + 1) for _ in range(n + 1)]
 q = deque()
 degree = [0] * (n + 1)
-for _ in range(int(input().rstrip())):
+for _ in range(m):
     a, b, c = map(int, input().split())
     adj[b].append((a,c))
     degree[a] += 1
