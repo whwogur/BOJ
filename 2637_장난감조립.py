@@ -36,6 +36,6 @@ while q:
             # 차수 0아면 큐에 넣음
             q.append(next)
 
-for x in enumerate(parts_needed[n]):
-    if x[1] > 0:
-        print(*x)
+for parts in enumerate(parts_needed[n]):
+    if parts[1] > 0:
+        print(*parts)
