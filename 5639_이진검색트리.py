@@ -1,14 +1,18 @@
 # 백준 5639
 import sys
+# 전위 순회를 했으므로 루트 노드보다 큰 원소가 나오는 지점이 왼쪽 서브트리를
+# 나누는 지점과 같다.
 
-# dfs 탐색
 def dfs(start, end):
 
     # 시작과 끝 값이 역전시 리턴
     if start > end:
         return
-
     temp = end + 1
+    # 만약 모든 원소가 루트 노드보다 작은 경우
+    # start +1, end 삽입, 즉 루트 노드를 제외한 트리
+    # dfs(temp, end): end + 1, end가 삽입되어 if start > end
+    # 에의해 리턴됨 -> 오른쪽 노드가 없음을 의미
 
     # 서브 트리 찾기
     for i in range(start + 1, end + 1):
@@ -22,8 +26,6 @@ def dfs(start, end):
 
     print(graph[start])
 
-
-# 입력이 없을때까지 반복하여 입력을 리스트에 추가한다.
 graph = []
 while True:
     try:
