@@ -6,13 +6,13 @@ from collections import deque
 def bfs():
     q = deque([n])
     while q:
-        x = q.popleft()
-        if x == k:
-            print(dist[x])
+        now = q.popleft()
+        if now == k:
+            print(dist[now])
             break
-        for nx in (x - 1, x + 1, x * 2):
+        for nx in (now - 1, now + 1, now * 2):
             if 0 <= nx <= MAX and dist[nx] == 0:
-                dist[nx] = dist[x] + 1
+                dist[nx] = dist[now] + 1
                 q.append(nx)
 
 MAX = 10 ** 5
