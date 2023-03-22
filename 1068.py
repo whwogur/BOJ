@@ -10,7 +10,6 @@ def dfs(rid, nodes):
 
 n = int(input())
 nodes = list(map(int, input().split()))
-adj = [[] for _ in range(n + 1)]
 rid = int(input().rstrip())
 
 answer = 0
