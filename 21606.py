@@ -25,7 +25,7 @@ for _ in range(e):
     a, b = map(int, input().split())
     adj[a].append(b)
     adj[b].append(a)
-    if inout[a-1] == 1 and io[b-1] == 1:
+    if inout[a-1] == 1 and inout[b-1] == 1:
         count += 2 # 실내끼리 인접했을 경우 경로를 2개 더해준다
 
 visited = set()
