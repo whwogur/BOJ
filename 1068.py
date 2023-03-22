@@ -2,11 +2,11 @@
 import sys
 input = sys.stdin.readline
 
-def dfs(node, l):
-    l[node] = 'X'
-    for i in range(len(l)):
-        if node == l[i]:
-            dfs(i, l)
+def dfs(rid, nodes):
+    nodes[rid] = 'X'
+    for i in range(len(nodes)):
+        if rid == nodes[i]:
+            dfs(i, nodes)
 
 n = int(input())
 nodes = list(map(int, input().split()))
