@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-def binarySearch(list, num):
+def lowerBound(list, num):
     low = 0
     high = len(list) - 1
     while low < high:
@@ -28,7 +28,7 @@ for i in cables:
     if i > lis[-1]:
         lis.append(i)
     else:
-        lis[binarySearch(lis, i)] = i
+        lis[lowerBound(lis, i)] = i
     answer.append(lis.index(i) + 1)
 
 lisLength = len(lis)
