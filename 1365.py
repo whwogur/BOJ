@@ -21,5 +21,5 @@ for i in range(1, n):
     else:
         idx = binarySearch(0, len(sequence)-1, numbers[i])
         sequence[idx] = numbers[i]
-        
+
 print(n - len(sequence))
