@@ -1,3 +1,4 @@
+# 3066 브리징 시그널
 import sys, bisect
 input = sys.stdin.readline
 
