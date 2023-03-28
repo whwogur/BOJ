@@ -10,8 +10,7 @@ int main()
     scanf("%d",&n);
     for(int i = 3; i<= n; i++)
     {
-        DP[i]= DP[i-1] + DP[i-2];
-        DP[i]= DP[i]%10007;
+        DP[i]= (DP[i-1] + DP[i-2]) % 10007;
     }
     printf("%d",DP[n]);
 }
