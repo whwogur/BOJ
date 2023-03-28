@@ -1,3 +1,4 @@
+# 2568 전깃줄 2
 import sys
 input = sys.stdin.readline
 
@@ -12,12 +13,13 @@ def lowerBound(list, num):
             low = mid + 1
     return high
 
+n = int(input().rstrip())
 cables = []
 dic = {}
 lis = [-1]
 answer = []
 traceBack = []
-n = int(input().rstrip())
+
 for _ in range(n):
     a, b = map(int, input().split())
     dic[b] = a
@@ -43,29 +45,3 @@ for i in traceBack:
     cables.remove(i)
 for i in cables:
     print(i)
-
-
-    # 1 8
-    # 2 2
-    # 3 9
-    # 4 1
-    # 6 4
-    # 7 6
-    # 9 7
-    # 10 10
-'''
-반례
-4
-1 2
-2 3
-3 4
-4 1
-
-답
-1
-4
-
-오답
-1
-1
-'''
