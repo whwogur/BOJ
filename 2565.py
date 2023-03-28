@@ -12,7 +12,6 @@ def lowerBound(list, num):
             low = mid + 1
     return high
 
-answer = []
 lis = [-1]
 cables = []
 dic = {}
@@ -28,6 +27,5 @@ for i in cables:
         lis.append(i)
     else:
         lis[lowerBound(lis, i)] = i
-    answer.append(lis.index(i) + 1)
 
 print(n - (len(lis) - 1))
