@@ -3,15 +3,15 @@ import sys
 input = sys.stdin.readline
 MAXLEN = 1001
 
-word1, word2 = input().rstrip(), input().rstrip()
-l_1, l_2 = len(word1), len(word2)
-cache = [0] * MAXLEN
+string1 = '' + input().strip()
+string2 = '' + input().strip()
+dp = [[0] * len(string2) for _ in range(len(string1))]
 
-for i in range(l_1):
-    cnt = 0
-    for j in range(l_2):
-        if cnt < cache[j]:
-            cnt = cache[j]
-        elif word1[i] == word2[j]:
-            cache[j] = cnt + 1
-print(max(cache))
+for i in range(1, len(string1)):
+    for j in range(1, len(string1)):
+        if string1[i] == string2[j]:
+            dp[i][j] = dp[i - 1][j - 1] + 1
+        else:
+            dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+print(dp[-1][-1])
