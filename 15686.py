@@ -12,7 +12,6 @@ house_cnt = 0
 chick_cnt = 0
 houses = []
 chicks = []
-chick_dist = []
 # idea -> 지도를 전부다 돌면서 집의 갯수, 치킨집 갯수, 좌표 정보를 모은다
 for i in range(1, n + 1):
     for j in range(1, n + 1):
@@ -26,10 +25,10 @@ for i in range(1, n + 1):
 answer = int(1e9)
 for chick in combinations(chicks, m):
     tmp = 0
-    for hx, hy in houses:
-        shortest = int(1e9)
-        for cx, cy in chicks:
-            shortest = min(shortest, abs(hx - cx) + abs(hy - cy))
-        tmp += shortest
-    answer = min(answer, tmp)
+    for house in houses:    
+        tmp += min(abs(house[0] - i[0]) + abs(house[1] - i[1]) for i in chick)
+        if answer <= tmp:
+            break 
+    if tmp < answer:
+        answer = tmp
 print(answer)
