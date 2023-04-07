@@ -4,16 +4,16 @@ input = sys.stdin.readline
 
 def dfs(x, y, depth, cnt):
     global ans
-    if ans >= cnt + max_val * (3 - depth):
+    if ans >= cnt + max_val * (4 - depth):
         return
-    if depth == 3:
+    if depth == 4:
         ans = max(ans, cnt)
     else:
         for i in range(4):
             nx, ny = x + dx[i], y + dy[i]
             if n > nx >= 0 <= ny < m and not visited[nx][ny]:
-                if cnt == 1:
-                    visited[nx][ny] = 1
+                if depth == 2:
+                    visited[nx][ny] = True
                     dfs(x, y, depth + 1, cnt + board[nx][ny])
                     visited[nx][ny] = False
                 visited[nx][ny] = True
@@ -30,7 +30,7 @@ max_val = max(map(max, board))
 for i in range(n):
     for j in range(m):
         visited[i][j] = True
-        dfs(i, j, 0, board[i][j])
+        dfs(i, j, 1, board[i][j])
         visited[i][j] = False
 
 print(ans)
